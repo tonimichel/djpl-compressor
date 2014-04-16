@@ -27,4 +27,18 @@
         {{ block.super }}
     {% endcompress %}
 {% endblock %}
+
+
+{% block admin_css %}
+    {% compress css %}
+        {{ block.super }}
+    {% endcompress %}   
+{% endblock %}
+    
+    
+{% block admin_js %}
+    {% compress js %}
+        {{ block.super }}
+    {% endcompress %}
+{% endblock %}
     
