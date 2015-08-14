@@ -10,18 +10,24 @@
 
 {% block public_js %}
     {% compress js %}
-        {{ block.super }}            
+        {{ block.super }}
     {% endcompress %}
 {% endblock %}
 
-   
+
 {% block private_css %}
     {% compress css %}
         {{ block.super }}
-    {% endcompress %}   
+    {% endcompress %}
 {% endblock %}
-    
-    
+
+{% block authenticated_js %}
+    {% compress js %}
+        {{ block.super }}
+    {% endcompress %}
+{% endblock %}
+
+
 {% block private_js %}
     {% compress js %}
         {{ block.super }}
@@ -32,13 +38,12 @@
 {% block admin_css %}
     {% compress css %}
         {{ block.super }}
-    {% endcompress %}   
+    {% endcompress %}
 {% endblock %}
-    
-    
+
+
 {% block admin_js %}
     {% compress js %}
         {{ block.super }}
     {% endcompress %}
 {% endblock %}
-    
