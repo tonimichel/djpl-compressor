@@ -1,47 +1,40 @@
 {% overextends "media_includes.html" %}
 {% load compress %}
-
-
 {% block public_css %}
     {% compress css %}
         {{ block.super }}
     {% endcompress %}
 {% endblock %}
-
 {% block public_js %}
     {% compress js %}
         {{ block.super }}
     {% endcompress %}
 {% endblock %}
-
-
 {% block private_css %}
     {% compress css %}
         {{ block.super }}
     {% endcompress %}
 {% endblock %}
-
-{% block authenticated_js %}
-    {% compress js %}
-        {{ block.super }}
-    {% endcompress %}
-{% endblock %}
-
-
 {% block private_js %}
     {% compress js %}
         {{ block.super }}
     {% endcompress %}
 {% endblock %}
-
-
+{% block authenticated_css %}
+    {% compress css %}
+        {{ block.super }}
+    {% endcompress %}
+{% endblock %}
+{% block authenticated_js %}
+    {% compress js %}
+        {{ block.super }}
+    {% endcompress %}
+{% endblock %}
 {% block admin_css %}
     {% compress css %}
         {{ block.super }}
     {% endcompress %}
 {% endblock %}
-
-
 {% block admin_js %}
     {% compress js %}
         {{ block.super }}
