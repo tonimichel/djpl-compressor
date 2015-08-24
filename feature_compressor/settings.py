@@ -9,8 +9,8 @@ def refine_STATICFILES_FINDERS(original):
 
 introduce_COMPRESS_ENABLED = True
 introduce_COMPRESS_OUTPUT_DIR = ''
-introduce_COMPRESS_JS_FILTERS = ['feature_compressor.filters.SemicolonAppender', 'feature_compressor.filters.YUglifyJSFilter']
-introduce_COMPRESS_CSS_FILTERS = ['feature_compressor.filters.YUglifyCSSFilter']
+introduce_COMPRESS_JS_FILTERS = ['feature_compressor.filters.SemicolonAppender', 'feature_compressor.filters.UglifyJSFilter']
+introduce_COMPRESS_CSS_FILTERS = ['feature_compressor.filters.UglifyCSSFilter']
 
 introduce_COMPRESS_PRECOMPILERS = (
     ('text/less', 'lessc {infile} {outfile}'),

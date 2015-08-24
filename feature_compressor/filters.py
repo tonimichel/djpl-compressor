@@ -8,25 +8,18 @@ class SemicolonAppender(FilterBase):
         return self.content.strip() + ';'
 
 
-class YUglifyFilter(CompilerFilter):
+class UglifyFilter(CompilerFilter):
     command = "{binary} {args}"
 
-    def __init__(self, *args, **kwargs):
-        super(YUglifyFilter, self).__init__(*args, **kwargs)
-        self.command += ' --type=%s' % self.type
 
-
-class YUglifyCSSFilter(YUglifyFilter):
-    type = 'css'
+class UglifyCSSFilter(UglifyFilter):
     options = (
-        ("binary", 'yuglify'),
-        ("args", '--terminal'),
+        ("binary", 'uglifycss'),
+        ("args", ''),
     )
 
-
-class YUglifyJSFilter(YUglifyFilter):
-    type = 'js'
+class UglifyJSFilter(UglifyFilter):
     options = (
-        ("binary", 'yuglify'),
-        ("args", '--terminal'),
+        ("binary", 'uglifyjs'),
+        ("args", '-c --mangle'),
     )
