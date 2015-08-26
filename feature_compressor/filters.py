@@ -21,5 +21,5 @@ class UglifyCSSFilter(UglifyFilter):
 class UglifyJSFilter(UglifyFilter):
     options = (
         ("binary", 'uglifyjs'),
-        ("args", '-c --mangle'),
+        ("args", "-c -m --comments '/license|License/' "),
     )
